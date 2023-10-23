@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+// Function to check if a number is prime
+bool isPrime(int num) {
+    if (num <= 1) {
+        return false;
+    }
+    for (int i = 2; i * i <= num; i++) {
+        if (num % i == 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main() {
+    int n;
+
+    // Prompt the user for the number of elements in the array
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    // Check for valid input
+    if (n <= 0) {
+        printf("Invalid input. Please enter a positive number of elements.\n");
+        return 1; // Exit with an error code
+    }
+
+    // Declare an array of n elements
+    int arr[n];
+
+    // Prompt the user to enter
