@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void decimalToBinary(int decimal) {
+    if (decimal > 1) {
+        decimalToBinary(decimal / 2);
+    }
+    printf("%d", decimal % 2);
+}
+
+int main() {
+    int decimal;
+
+    // Prompt the user to enter a decimal number
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+
+    if (decimal < 0) {
+        printf("Please enter a non-negative integer.\n");
+        return 1; // Exit with an error code
+    }
+
+    printf("Binary equivalent: ");
+    if (decimal == 0) {
+        printf("0");
+    } else {
+        decimalToBinary(decimal);
+    }
+    printf("\n");
+
+    return 0; // Exit successfully
+}
